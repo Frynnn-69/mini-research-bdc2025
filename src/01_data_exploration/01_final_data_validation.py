@@ -4,8 +4,8 @@ from tqdm.auto import tqdm
 import time
 
 # -- Konfigurasi --
-input_filename = '/Users/azuka/Documents/BELAJAR/mini-research-bdc2025/01_data_exploration/datatrain_cleaned.csv'
-output_filename = '01_data_exploration/datatrain_final.csv'
+input_filename = 'src/01_data_exploration/datatrain_cleaned.csv'
+output_filename = 'src/01_data_exploration/datatrain_final.csv'
 timeout_seconds = 10
 
 headers = {
@@ -58,4 +58,7 @@ df_final = df[df['is_accessible'] == True].copy()
 df_final = df_final.drop(columns=['is_accessible'])
 
 df_final.to_csv(output_filename, index=False)
-print(f"Dataset final dengan {len(df_final)} baris data valid telah disimpan sebagai '{output_filename}'")
+print(f"Dataset final: '{output_filename}'")
+
+
+# print(f"Dataset final dengan {len(df_final)} baris data valid telah disimpan sebagai '{output_filename}'")
